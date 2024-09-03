@@ -15,21 +15,23 @@
         </div>
         <div class="text-primary my-12">
           <ul class="flex flex-wrap">
-            <li class="border-r-2 border-primary p-1"><a href="/">Ana Səhifə</a></li>
             <li class="border-r-2 border-primary p-1">
-              <a href="/musicbox">Musiqi Qutuları</a>
+              <RouterLink to="/">Ana Səhifə</RouterLink>
             </li>
             <li class="border-r-2 border-primary p-1">
-              <a href="/chocolate">Şokoladlar </a>
+              <RouterLink to="/musicbox">Musiqi Qutuları</RouterLink>
             </li>
             <li class="border-r-2 border-primary p-1">
-              <a href="/about">Haqqımızda</a>
+              <RouterLink to="/chocolate">Şokoladlar </RouterLink>
             </li>
             <li class="border-r-2 border-primary p-1">
-              <a href="/korporativ">Korporativ</a>
+              <RouterLink to="/about">Haqqımızda</RouterLink>
             </li>
             <li class="border-r-2 border-primary p-1">
-              <a href="./parliament.html">Əlaqə</a>
+              <RouterLink to="/korporativ">Korporativ</RouterLink>
+            </li>
+            <li class="border-r-2 border-primary p-1">
+              <RouterLink to="./parliament.html">Əlaqə</RouterLink>
             </li>
           </ul>
         </div>

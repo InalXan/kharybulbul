@@ -16,11 +16,13 @@ export default {
 <template>
   <div class="w-full">
     <div class="w-full h-[5vh] bg-primary text-center flex items-center justify-center">
-      <a href="#" class="text-second">Satın almaq üçün klikləyin !</a>
+      <RouterLink to="/contact" class="text-second">Satın almaq üçün klikləyin !</RouterLink>
     </div>
     <div class="flex justify-around items-center">
       <div>
-        <img src="../assets/logo.jpg" class="w-[100px] m-2" alt="" />
+        <RouterLink to="/"
+          ><img src="../assets/logo.jpg" class="w-[100px] m-2" alt=""
+        /></RouterLink>
       </div>
       <div>
         <ul class="flex sm:hidden">
@@ -33,12 +35,24 @@ export default {
           class="flex flex-col sm:flex-row sm:relative absolute bg-second text-thirty p-5 -mx-16"
           v-if="isMenuOpen"
         >
-          <li class="m-1"><a class="p-1 hover:underline" href="/">Ana Səhifə</a></li>
-          <li class="m-1"><a class="p-1 hover:underline" href="/korporativ">Korporativ</a></li>
-          <li class="m-1"><a class="p-1 hover:underline" href="/musicbox">Musiqili Qutular</a></li>
-          <li class="m-1"><a class="p-1 hover:underline" href="/chocolate">Şokoladlar</a></li>
-          <li class="m-1"><a class="p-1 hover:underline" href="/about">Haqqımızda</a></li>
-          <li class="m-1"><a class="p-1 hover:underline" href="/contact">Əlaqə</a></li>
+          <li class="m-1">
+            <RouterLink class="p-1 hover:underline" to="/">Ana Səhifə</RouterLink>
+          </li>
+          <li class="m-1">
+            <RouterLink class="p-1 hover:underline" to="/korporativ">Korporativ</RouterLink>
+          </li>
+          <li class="m-1">
+            <RouterLink class="p-1 hover:underline" to="/musicbox">Musiqili Qutular</RouterLink>
+          </li>
+          <li class="m-1">
+            <RouterLink class="p-1 hover:underline" to="/chocolate">Şokoladlar</RouterLink>
+          </li>
+          <li class="m-1">
+            <RouterLink class="p-1 hover:underline" to="/about">Haqqımızda</RouterLink>
+          </li>
+          <li class="m-1">
+            <RouterLink class="p-1 hover:underline" to="/contact">Əlaqə</RouterLink>
+          </li>
         </ul>
       </div>
       <div>
