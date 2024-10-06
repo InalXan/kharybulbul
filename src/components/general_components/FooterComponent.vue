@@ -4,9 +4,6 @@
     <div class="flex items-center justify-center">
       <div>
         <div>
-          <h1 class="font-extrabold text-5xl text-primary mx-12">
-            <img src="../assets/logo.jpg" class="w-24" alt="" />
-          </h1>
           <img src="../../assets/logo.jpg" class="w-28" alt="" />
         </div>
         <div class="text-primary my-12">
