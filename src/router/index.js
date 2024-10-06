@@ -20,26 +20,25 @@ const router = createRouter({
       component: () => import('../views/ContactView.vue')
     },
     {
-      path: '/korporativ',
-      name: 'korporativ',
-      component: () => import('../views/SponsorsView.vue')
-    },
-    {
       path: '/musicbox',
       name: 'musicbox',
       component: () => import('../views/MusicboxView.vue')
     },
     {
-      path: '/chocolate',
+      path: '/chocolates',
       name: 'chocolate',
       component: () => import('../views/ChocolateView.vue')
     },
-    // Admin panel
-
+    {
+      path: '/korporativ',
+      name: 'korporativ',
+      component: () => import('../views/KorporativView.vue')
+    },
+    // admin
     {
       path: '/admin/login',
-      name: 'login',
-      component: () => import('../views/admin/AdminloginView.vue')
+      name: 'admin-login',
+      component: () => import('../views/admin/LoginView.vue')
     }
   ]
 })

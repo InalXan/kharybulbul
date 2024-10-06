@@ -18,12 +18,12 @@
 
         <form class="mt-6" action="#" method="POST">
           <div>
-            <label class="block text-gray-700">Email Address</label>
+            <label class="block text-gray-700">* Email</label>
             <input
               type="email"
               name=""
               id=""
-              placeholder="Enter Email Address"
+              placeholder="example@example.com"
               class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
               autofocus
               required
@@ -31,12 +31,12 @@
           </div>
 
           <div class="mt-4">
-            <label class="block text-gray-700">Password</label>
+            <label class="block text-gray-700">* Şifrə</label>
             <input
               type="password"
               name=""
               id=""
-              placeholder="Enter Password"
+              placeholder="***********"
               minlength="6"
               class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
               required
