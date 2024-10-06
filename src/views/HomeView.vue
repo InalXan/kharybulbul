@@ -15,7 +15,7 @@ import FooterComponent from '@/components/general_components/FooterComponent.vue
         <h1 class="text-primary">Xarı Bülbülə Xoş Gəlmisiniz</h1>
         <h1 class="text-second">Hər Növ Şokolad və Musiqi Qutuları</h1>
         <div class="w-full max-w-[600px]">
-          <p class="text-xs font-poppins text-second">
+          <p class="text-xs font-poppins m-3 text-second">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae voluptatem ex,
             quidem maxime sapiente culpa, dolorem doloribus
           </p>
