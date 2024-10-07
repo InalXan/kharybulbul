@@ -1,33 +1,44 @@
 <script setup>
-import NavigationComponent from '@/components/general_components/NavigationComponent.vue'
-import FooterComponent from '@/components/general_components/FooterComponent.vue'
+import FooterComponent from "../components/general_components/FooterComponent.vue";
+import NavigationComponent from "../components/general_components/NavigationComponent.vue";
 </script>
 <template>
-  <NavigationComponent />
-  <!-- about  -->
-  <div class="py-16 bg-white">
-    <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-      <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-        <div class="md:5/12 lg:w-5/12">
-          <img src="../assets/img-2.jpg" alt="image" loading="lazy" width="" height="" />
-        </div>
-        <div class="md:7/12 lg:w-6/12">
-          <h2 class="text-2xl text-gray-900 font-updock font-bold md:text-4xl">
-            Xarıbülbül Haqqında
-          </h2>
-          <p class="mt-6 text-gray-600">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum omnis voluptatem
-            accusantium nemo perspiciatis delectus atque autem! Voluptatum tenetur beatae unde
-            aperiam, repellat expedita consequatur! Officiis id consequatur atque doloremque!
-          </p>
-          <p class="mt-4 text-gray-600">
-            Nobis minus voluptatibus pariatur dignissimos libero quaerat iure expedita at?
-            Asperiores nemo possimus nesciunt dicta veniam aspernatur quam mollitia.
-          </p>
+  <div id="container" class="w-full min-h-[100vh]">
+    <NavigationComponent />
+
+    <div class="py-16 bg-second">
+      <div class="container m-auto px-6 text-shadow md:px-12 xl:px-6">
+        <div
+          class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12"
+        >
+          <div class="md:5/12 lg:w-5/12">
+            <img
+              src="../assets/img/logo.jpg"
+              alt="image"
+              loading="lazy"
+              width=""
+              height=""
+            />
+          </div>
+          <div class="md:7/12 lg:w-6/12">
+            <h2 class="text-2xl text-primary font-bold md:text-4xl">
+              Anproduction Haqqında
+            </h2>
+            <p class="mt-6 text-shadow">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum
+              omnis voluptatem accusantium nemo perspiciatis delectus atque
+              autem! Voluptatum tenetur beatae unde aperiam, repellat expedita
+              consequatur! Officiis id consequatur atque doloremque!
+            </p>
+            <p class="mt-4 text-shadow">
+              Nobis minus voluptatibus pariatur dignissimos libero quaerat iure
+              expedita at? Asperiores nemo possimus nesciunt dicta veniam
+              aspernatur quam mollitia.
+            </p>
+          </div>
         </div>
       </div>
     </div>
+    <FooterComponent />
   </div>
-  <!-- footer  -->
-  <FooterComponent />
 </template>
