@@ -5,7 +5,7 @@
       id="navigation_menu"
       class="w-full p-2 bg-primary flex justify-center items-center text-second"
     >
-      <h1 class="font-updock text-2xl">Şokolad Kafemizə Xoş Gəlmisiniz !</h1>
+      <h1 class="font-updock text-2xl">Xarıbülbülü Kəşf Edin !</h1>
     </div>
     <!-- navigation bar  -->
     <div class="flex flex-wrap z-20">
