@@ -131,7 +131,7 @@ const closeModal = () => {
               </div>
             </div>
             <RouterLink
-              class="text-gray-800 block mt-2 truncate hover:underline font-medium text-lg"
+              class="text-gray-800 font-updock block mt-2 truncate hover:underline font-medium text-2xl"
               to="/musicbox"
             >
               {{ MusicBox.title }}
