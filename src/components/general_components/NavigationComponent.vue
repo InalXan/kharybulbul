@@ -1,114 +1,118 @@
 <template>
-  <!-- Navigation bar -->
-  <nav
-    :class="[
-      'w-full bg-second border-b border-shadow py-1 z-50 top-0 transition-all duration-300',
-      isShrunk ? 'bg-gray-800 py-1' : 'bg-gray-900 py-3',
-    ]"
-    id="header"
-    class="fixed"
-  >
+  <header class="w-full">
+    <!-- message header  -->
     <div
-      class="w-full container mx-auto flex flex-wrap items-center justify-between px-6"
+      id="navigation_menu"
+      class="w-full p-2 bg-primary flex justify-center items-center text-second"
     >
-      <label for="menu-toggle" class="cursor-pointer md:hidden block">
-        <svg
-          class="fill-current text-gray-100"
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-        >
-          <title>menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-        </svg>
-      </label>
-      <input class="hidden" type="checkbox" id="menu-toggle" />
+      <h1 class="font-updock text-2xl">Xarıbülbülü Kəşf Edin !</h1>
+    </div>
+    <!-- navigation bar  -->
+    <div class="flex flex-wrap z-20">
+      <div class="w-full">
+        <nav class="relative flex flex-wrap items-center justify-between shadow-sm bg-second">
+          <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+            <div
+              class="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start"
+            >
+              <a
+                class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase primary"
+                href="#pablo"
+              >
+                <img src="../../assets/logo.jpg" class="w-16 h-16 rounded-full" alt="" />
+              </a>
+              <button
+                class="text-primary cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+                type="button"
+                v-on:click="toggleNavbar()"
+              >
+                <ion-icon name="menu-outline"></ion-icon>
+              </button>
+            </div>
+            <div
+              v-bind:class="{ hidden: !menuShow, flex: menuShow }"
+              class="lg:flex lg:flex-grow items-center"
+            >
+              <ul class="flex flex-col lg:flex-row list-none lg:ml-auto font-dancing font-bold">
+                <li class="nav-item">
+                  <RouterLink
+                    class="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-primary hover:opacity-75"
+                    to="/"
+                  >
+                    Ana Səhifə
+                  </RouterLink>
+                </li>
+                <li class="nav-item">
+                  <RouterLink
+                    class="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-primary hover:opacity-75"
+                    to="/musicbox"
+                  >
+                    Musiqi Qutuları
+                  </RouterLink>
+                </li>
+                <li class="nav-item">
+                  <RouterLink
+                    class="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-primary hover:opacity-75"
+                    to="/chocolates"
+                  >
+                    Şokoladlar
+                  </RouterLink>
+                </li>
+                <li class="nav-item">
+                  <RouterLink
+                    class="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-primary hover:opacity-75"
+                    to="/Korporativ"
+                  >
+                    Korporativ
+                  </RouterLink>
+                </li>
 
-      <div
-        class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1"
-        id="menu"
-      >
-        <ul
-          class="md:flex items-center justify-between text-base text-gray-100 pt-4 md:pt-0"
-        >
-          <li>
-            <RouterLink
-              class="inline-block no-underline hover:text-white hover:underline py-2 px-4"
-              to="/"
-              >Ana Səhifə</RouterLink
-            >
-          </li>
-          <li>
-            <RouterLink
-              class="inline-block no-underline hover:text-white hover:underline py-2 px-4"
-              to="/about"
-              >Haqqımızda</RouterLink
-            >
-          </li>
-          <li>
-            <RouterLink
-              class="inline-block no-underline hover:text-white hover:underline py-2 px-4"
-              to="/ironworks"
-              >Dəmir Konstruksiyalar</RouterLink
-            >
-          </li>
-          <li>
-            <RouterLink
-              class="inline-block no-underline hover:text-white hover:underline py-2 px-4"
-              to="/furnitures"
-              >Mebellər</RouterLink
-            >
-          </li>
-          <li>
-            <RouterLink
-              class="inline-block no-underline hover:text-white hover:underline py-2 px-4"
-              to="/contact"
-              >Əlaqə</RouterLink
-            >
-          </li>
-        </ul>
-      </div>
+                <li class="nav-item">
+                  <RouterLink
+                    class="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-primary hover:opacity-75"
+                    to="/about"
+                  >
+                    Haqqımızda
+                  </RouterLink>
+                </li>
 
-      <div class="order-1 md:order-2">
-        <RouterLink
-          class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-100 text-xl"
-          to="/"
-        >
-          <img src="../../assets/img/logo.png" class="w-16" alt="Logo" />
-        </RouterLink>
+                <li class="nav-item">
+                  <RouterLink
+                    class="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-primary hover:opacity-75"
+                    to="/contact"
+                  >
+                    Əlaqə
+                  </RouterLink>
+                </li>
+                <li>
+                  <!-- media  -->
+                  <div class="text-xl flex text-dark">
+                    <a href="/" class="m-1 p-1"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="/" class="m-1 p-1"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="/" class="m-1 p-1"><ion-icon name="logo-whatsapp"></ion-icon></a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
       </div>
     </div>
-  </nav>
-  <br />
-  <br />
-  <br />
-  <br />
+  </header>
 </template>
 
-<script setup>
-import { ref, onMounted, onUnmounted } from "vue";
-
-const isShrunk = ref(false);
-
-const handleScroll = () => {
-  if (window.scrollY > 50) {
-    isShrunk.value = true;
-  } else {
-    isShrunk.value = false;
+<script>
+export default {
+  name: 'pink-menu',
+  data() {
+    return {
+      menuShow: false
+    }
+  },
+  methods: {
+    toggleNavbar: function () {
+      this.menuShow = !this.menuShow
+    }
   }
-};
-
-onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
-});
-
-onUnmounted(() => {
-  window.removeEventListener("scroll", handleScroll);
-});
-</script>
-<style scoped>
-#menu-toggle:checked + #menu {
-  display: block;
 }
-</style>
+</script>
