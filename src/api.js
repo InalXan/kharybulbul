@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: 'http://localhost:5000/',
+  baseURL: 'http://localhost:5173/',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json'
@@ -108,3 +108,44 @@ export const updateCategory = async (id, formData) => {
     throw error
   }
 }
+
+//Add fetchChocolates
+export const fetchChocolates = async () => {
+  try {
+    const response = await api.get('myapi.json');
+    return response.data.chocolates.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+//Add fetchCooperative
+export const fetchCooperative = async () => {
+  try {
+    const response = await api.get('myapi.json');
+    console.log(response.data.cooperative.data, 'test222')
+    return response.data.cooperative.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+//Add fetchMusicbox
+export const fetchMusicbox = async () => {
+  try {
+    const response = await api.get('myapi.json');
+    return response.data.musicbox.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+//Add fetchAbout
+export const fetchAbout = async () => {
+  try {
+    const response = await api.get('myapi.json');
+    return response.data.about.data;
+  } catch (error) {
+    throw error;
+  }
+};

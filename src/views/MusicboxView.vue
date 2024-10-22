@@ -1,84 +1,12 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
 import NavigationComponent from '@/components/general_components/NavigationComponent.vue'
 import FooterComponent from '@/components/general_components/FooterComponent.vue'
+import { fetchMusicbox } from '@/api'
+
 // MusicBoxes array with image URLs
-const MusicBoxes = ref([
-  { img: new URL('../assets/katalog/Kataloq-1.jpg', import.meta.url).href, title: 'Üz Qapağı' },
-  {
-    img: new URL('../assets/katalog/Kataloq-2.jpg', import.meta.url).href,
-    title: 'Xoş Gəlmisiniz'
-  },
-  {
-    img: new URL('../assets/katalog/Kataloq-3.jpg', import.meta.url).href,
-    title: 'Şuşanın Dağları'
-  },
-  { img: new URL('../assets/katalog/Kataloq-4.jpg', import.meta.url).href, title: 'Sarı Gəlin' },
-  { img: new URL('../assets/katalog/Kataloq-5.jpg', import.meta.url).href, title: 'Qara Qızıl' },
-  {
-    img: new URL('../assets/katalog/Kataloq-6.jpg', import.meta.url).href,
-    title: 'Böyük İpək Yolu'
-  },
-  { img: new URL('../assets/katalog/Kataloq-7.jpg', import.meta.url).href, title: 'Xarı Bülbül' },
-  { img: new URL('../assets/katalog/Kataloq-8.jpg', import.meta.url).href, title: 'Bahar' },
-  {
-    img: new URL('../assets/katalog/Kataloq-9.jpg', import.meta.url).href,
-    title: 'Qarabağ Atları'
-  },
-  { img: new URL('../assets/katalog/Kataloq-10.jpg', import.meta.url).href, title: 'Xəmsə' },
-  { img: new URL('../assets/katalog/Kataloq-11.jpg', import.meta.url).href, title: 'Bülbül' },
-  { img: new URL('../assets/katalog/Kataloq-12.jpg', import.meta.url).href, title: 'Nar' },
-  {
-    img: new URL('../assets/katalog/Kataloq-13.jpg', import.meta.url).href,
-    title: 'Dəyərli İnsanlar Üçün Özəl'
-  },
-  { img: new URL('../assets/katalog/Kataloq-14.jpg', import.meta.url).href, title: 'Şokoladlar' },
-  {
-    img: new URL('../assets/katalog/Kataloq-15.jpg', import.meta.url).href,
-    title: 'Xoşbəxt Anlar'
-  },
-  {
-    img: new URL('../assets/katalog/Kataloq-16.jpg', import.meta.url).href,
-    title: 'Sultan / Badamlı Marsipan'
-  },
-  {
-    img: new URL('../assets/katalog/Kataloq-17.jpg', import.meta.url).href,
-    title: 'Səbət'
-  },
-  {
-    img: new URL('../assets/katalog/Kataloq-18.jpg', import.meta.url).href,
-    title: 'Klassik trufel / Kakaolu trufel'
-  },
-  {
-    img: new URL('../assets/katalog/Kataloq-19.jpg', import.meta.url).href,
-    title: 'Kainat / Səma'
-  },
-  {
-    img: new URL('../assets/katalog/Kataloq-20.jpg', import.meta.url).href,
-    title: 'Buta / Arı Pətəyi'
-  },
-  {
-    img: new URL('../assets/katalog/Kataloq-21.jpg', import.meta.url).href,
-    title: 'Fındıqlı Ehram / Çiyələkli Şokolad'
-  },
-  {
-    img: new URL('../assets/katalog/Kataloq-22.jpg', import.meta.url).href,
-    title: 'Qara Qızıl / Porta]al Dilimi'
-  },
-  {
-    img: new URL('../assets/katalog/Kataloq-23.jpg', import.meta.url).href,
-    title: 'Digər'
-  },
-  {
-    img: new URL('../assets/katalog/Kataloq-24.jpg', import.meta.url).href,
-    title: 'Digər'
-  },
-  {
-    img: new URL('../assets/katalog/Kataloq-25.jpg', import.meta.url).href,
-    title: 'Xarı Bülbül Kafemizə Xoş Gəlmisiniz'
-  }
-])
+const MusicBoxes = ref([])
 
 const selectedImage = ref(null)
 
@@ -89,6 +17,16 @@ const openModal = (image) => {
 const closeModal = () => {
   selectedImage.value = null
 }
+
+onMounted(async () => {
+  try {
+    const data = await fetchMusicbox(); 
+    MusicBoxes.value = data;
+    console.log(data);
+  } catch (error) {
+    console.error('Error loading chocolates:', error);
+  }
+});
 </script>
 
 <template>

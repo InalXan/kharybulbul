@@ -1,35 +1,10 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import NavigationComponent from '../components/general_components/NavigationComponent.vue'
 import FooterComponent from '../components/general_components/FooterComponent.vue'
+import { fetchChocolates } from '@/api';
 // MusicBoxes array with image URLs
-const Chocolates = ref([
-  { img: new URL('../assets/chocolates/1.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/2.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/3.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/4.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/5.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/6.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/7.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/8.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/9.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/10.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/11.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/12.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/13.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/14.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/15.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/16.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/17.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/18.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/19.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/20.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/21.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/22.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/23.jpg', import.meta.url).href, title: 'Adı' },
-  { img: new URL('../assets/chocolates/24.jpg', import.meta.url).href, title: 'Adı' }
-])
-
+const Chocolates = ref([])
 const selectedImage = ref(null)
 
 const openModal = (image) => {
@@ -39,6 +14,18 @@ const openModal = (image) => {
 const closeModal = () => {
   selectedImage.value = null
 }
+
+onMounted(async () => {
+  try {
+    const data = await fetchChocolates(); 
+    Chocolates.value = data;
+    console.log(data);
+      
+  } catch (error) {
+    console.error('Error loading chocolates:', error);
+  }
+});
+
 </script>
 
 <template>
@@ -62,7 +49,7 @@ const closeModal = () => {
       <div
         v-for="(Chocolate, index) in Chocolates"
         :key="index"
-        class="select-none mb-6 w-full"
+        class="select-none mb-6 w-full" 
         @click="openModal(Chocolate.img)"
       >
         <div class="relative pb-64 cursor-pointer">

@@ -1,0 +1,56 @@
+{
+  "chocolates": {
+    "data": [
+      {
+        "id": 1,
+        "img": "./src/assets/chocolates/1.jpg"
+      },
+      {
+        "id": 2,
+        "img": "./src/assets/chocolates/2.jpg"
+      },
+      {
+        "id": 3,
+        "img": "./src/assets/chocolates/3.jpg"
+      }
+    ]
+  },
+  "cooperative": {
+    "data": [
+      {
+        "id": 1,
+        "img": "./src/assets/chocolates/4.jpg",
+        "title": "Chocolate 1 "
+      },
+      {
+        "id": 2,
+        "img": "./src/assets/chocolates/5.jpg",
+        "title": "Chocolate 2 "
+      },
+      {
+        "id": 3,
+        "img": "./src/assets/chocolates/6.jpg",
+        "title": "Chocolate 3 "
+      }
+    ]
+  },
+  "musicbox": {
+    "data": [
+      {
+        "title": "Song 1",
+        "img": "./src/assets/katalog/Kataloq-1.jpg"
+      },
+      {
+        "title": "Song 2",
+        "img": "./src/assets/katalog/Kataloq-2.jpg"
+      }
+    ]
+  },
+  "about": {
+    "data": {
+      "title": "About Us",
+      "img": "./src/assets/katalog/Kataloq-3.jpg",
+      "description": "This is a description of the about page."
+    }
+  }
+}
