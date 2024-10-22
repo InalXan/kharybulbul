@@ -22,7 +22,6 @@ onMounted(async () => {
   try {
     const data = await fetchMusicbox(); 
     MusicBoxes.value = data;
-    console.log(data);
   } catch (error) {
     console.error('Error loading chocolates:', error);
   }

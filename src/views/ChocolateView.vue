@@ -18,9 +18,7 @@ const closeModal = () => {
 onMounted(async () => {
   try {
     const data = await fetchChocolates(); 
-    Chocolates.value = data;
-    console.log(data);
-      
+    Chocolates.value = data;      
   } catch (error) {
     console.error('Error loading chocolates:', error);
   }

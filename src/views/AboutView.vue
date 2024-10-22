@@ -9,7 +9,6 @@ onMounted (async() => {
   try{
     const data = await fetchAbout()
     aboutImage.value = data
-    console.log(data);
   }
   catch (error){
     console.error('Error loading chocolates:', error);

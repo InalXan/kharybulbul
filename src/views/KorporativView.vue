@@ -10,7 +10,6 @@ onMounted(async () => {
   try {
     const data = await fetchCooperative(); 
     cooperativeImages.value = data;
-    console.log(data, 'asdasdasdaqq');
   } catch (error) {
     console.error('Error loading chocolates:', error);
   }

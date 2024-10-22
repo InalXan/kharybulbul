@@ -123,7 +123,6 @@ export const fetchChocolates = async () => {
 export const fetchCooperative = async () => {
   try {
     const response = await api.get('myapi.json');
-    console.log(response.data.cooperative.data, 'test222')
     return response.data.cooperative.data;
   } catch (error) {
     throw error;
